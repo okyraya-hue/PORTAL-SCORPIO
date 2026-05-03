@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cek Scorpio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="index.html">Home</a>
+<a href="artikel.html">Artikel</a>
+</nav>
+</header>
+
+<div class="container">
+
+<h2>Cek Scorpio Kamu</h2>
+
+<input id="tgl" placeholder="Tanggal">
+<input id="bln" placeholder="Bulan (10/11)">
+<br><br>
+
+<button onclick="cek()">Cek</button>
+
+<div id="hasil"></div>
+
+</div>
+
+<script>
+function cek(){
+document.getElementById("hasil").innerHTML="Kamu Scorpio!";
+}
+</script>
+
+</body>
+</html>

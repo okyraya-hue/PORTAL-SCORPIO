@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scorpio Portal 🔮</title>
+
+<!-- ADSENSE -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573259816465364"
+crossorigin="anonymous"></script>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#0f172a;
+  color:white;
+}
+
+/* HEADER */
+header{
+  background:#020617;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:bold;
+  color:#e11d48;
+}
+
+nav button{
+  margin:5px;
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
+  background:#e11d48;
+  color:white;
+  cursor:pointer;
+}
+
+/* SECTION */
+.section{display:none;padding:20px;}
+.active{display:block;}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:15px;
+  border-radius:12px;
+  margin:10px 0;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;}
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:12px;
+  opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">🦂 Scorpio Portal</div>
+<nav>
+<button onclick="show('home')">Home</button>
+<button onclick="show('cek')">Cek</button>
+<button onclick="show('artikel')">Artikel</button>
+<button onclick="show('about')">About</button>
+</nav>
+</header>
+
+<!-- HOME -->
+<div id="home" class="section active">
+
+<h2>🔥 Trending Scorpio</h2>
+
+<div class="grid">
+
+<div class="card">Ramalan Scorpio Hari Ini 🔮</div>
+<div class="card">Scorpio Oktober vs November ⚡</div>
+<div class="card">Rahasia Scorpio 🔥</div>
+<div class="card">Cinta Scorpio ❤️</div>
+
+</div>
+
+<!-- IKLAN -->
+<div class="card">
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-5573259816465364"
+data-ad-slot="1234567890"
+data-ad-format="auto"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+</div>
+
+<!-- CEK -->
+<div id="cek" class="section">
+
+<h2>Cek Scorpio Kamu</h2>
+
+<input id="nama" placeholder="Nama"><br>
+<input id="tgl" type="number" placeholder="Tanggal">
+<input id="bln" type="number" placeholder="Bulan (10/11)"><br><br>
+
+<button onclick="cek()">🔮 Cek</button>
+
+<div id="hasil" class="card" style="display:none;"></div>
+
+</div>
+
+<!-- ARTIKEL -->
+<div id="artikel" class="section">
+
+<h2>Artikel Scorpio</h2>
+
+<div id="listArtikel"></div>
+
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+<div class="card">
+<h2>Tentang Website</h2>
+<p>Portal Scorpio berisi ramalan, karakter, dan insight zodiak Scorpio.</p>
+</div>
+</div>
+
+<footer>
+© 2026 Scorpio Portal | Hiburan & Informasi
+</footer>
+
+<script>
+
+function show(id){
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function rand(arr){
+return arr[Math.floor(Math.random()*arr.length)];
+}
+
+function cek(){
+let nama=document.getElementById("nama").value||"Kamu";
+let t=parseInt(document.getElementById("tgl").value);
+let b=parseInt(document.getElementById("bln").value);
+
+let tipe="";
+if(b==10 && t>=23) tipe="Oktober";
+else if(b==11 && t<=21) tipe="November";
+else{alert("Scorpio only");return;}
+
+let hoki=Math.floor(Math.random()*100);
+
+document.getElementById("hasil").style.display="block";
+document.getElementById("hasil").innerHTML=`
+<h3>${nama} - Scorpio ${tipe}</h3>
+<p>🔥 Hoki: ${hoki}%</p>
+<p>❤️ ${rand(["Cinta datang","Ujian cinta"])}</p>
+<p>💰 ${rand(["Rezeki datang","Hemat dulu"])}</p>
+`;
+}
+
+/* ARTIKEL AUTO */
+const artikelData=[
+"Karakter Scorpio",
+"Rahasia Scorpio",
+"Cinta Scorpio",
+"Keuangan Scorpio",
+"Sifat Scorpio",
+"Kelebihan Scorpio",
+"Kelemahan Scorpio",
+"Scorpio Hari Ini"
+];
+
+let html="";
+artikelData.forEach(j=>{
+html+=`<div class="card"><h3>${j}</h3><p>Scorpio dikenal sebagai pribadi kuat dan penuh misteri.</p></div>`;
+});
+document.getElementById("listArtikel").innerHTML=html;
+
+</script>
+
+</body>
+</html>
