@@ -1,26 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Karakter Scorpio</title>
+<title>Artikel Scorpio</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
 <nav>
 <a href="index.html">Home</a>
-<a href="artikel.html">Artikel</a>
+<a href="cek.html">Cek</a>
 </nav>
 </header>
 
 <div class="container">
 
-<h1>Karakter Scorpio</h1>
+<h2>🔥 30 Artikel Scorpio</h2>
 
-<p>Scorpio dikenal sebagai pribadi kuat, misterius, dan penuh ambisi...</p>
+<div id="list"></div>
 
 </div>
+
+<script>
+
+const judul = [
+"Karakter Scorpio yang kuat",
+"Rahasia Scorpio tersembunyi",
+"Kenapa Scorpio sulit dilupakan",
+"Kelebihan Scorpio dalam hidup",
+"Kelemahan Scorpio yang jarang diketahui",
+"Asmara Scorpio hari ini",
+"Scorpio dan keuangan",
+"Scorpio dalam pertemanan",
+"Scorpio Oktober vs November",
+"Tips sukses untuk Scorpio",
+"Scorpio dan karier",
+"Fakta unik Scorpio",
+"Scorpio paling setia?",
+"Scorpio dan emosi",
+"Scorpio dan masa depan",
+"Energi Scorpio hari ini",
+"Scorpio dan keberuntungan",
+"Scorpio dan cinta diam-diam",
+"Scorpio yang misterius",
+"Scorpio paling ambisius",
+"Scorpio dan intuisi",
+"Scorpio dalam tekanan",
+"Scorpio dan kesuksesan",
+"Scorpio dan kehidupan",
+"Scorpio dan perubahan",
+"Scorpio yang kuat mental",
+"Scorpio dan strategi hidup",
+"Scorpio dan kepribadian unik",
+"Scorpio dan daya tarik",
+"Scorpio paling menarik"
+];
+
+let html="";
+judul.forEach((j,i)=>{
+html+=`<div class="card">
+<a href="post.html?id=${i}">${j}</a>
+</div>`;
+});
+
+document.getElementById("list").innerHTML=html;
+
+</script>
 
 </body>
 </html>
