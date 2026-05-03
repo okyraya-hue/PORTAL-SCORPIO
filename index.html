@@ -3,73 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scorpio Portal 🔮</title>
-
-<!-- ADSENSE -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5573259816465364"
-crossorigin="anonymous"></script>
+<title>Scorpio Portal</title>
 
 <style>
 body{
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:#0f172a;
-  color:white;
+margin:0;
+font-family:'Segoe UI',system-ui;
+background:#0b1220;
+color:#e5e7eb;
 }
 
 /* HEADER */
 header{
-  background:#020617;
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+padding:16px 24px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(15,23,42,0.7);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.05);
+position:sticky;
+top:0;
 }
 
 .logo{
-  font-weight:bold;
-  color:#e11d48;
+color:#f43f5e;
+font-weight:600;
+font-size:18px;
 }
 
 nav button{
-  margin:5px;
-  padding:8px 12px;
-  border:none;
-  border-radius:8px;
-  background:#e11d48;
-  color:white;
-  cursor:pointer;
+margin:5px;
+padding:8px 14px;
+border:none;
+border-radius:999px;
+background:rgba(255,255,255,0.05);
+color:#e5e7eb;
+cursor:pointer;
+transition:0.2s;
+}
+nav button:hover{
+background:#f43f5e;
+color:white;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:50px 20px 30px;
+max-width:600px;
+margin:auto;
+}
+
+.hero h1{
+font-size:28px;
+font-weight:600;
+color:#f8fafc;
+}
+
+.hero p{
+opacity:0.6;
+font-size:14px;
 }
 
 /* SECTION */
-.section{display:none;padding:20px;}
+.section{
+display:none;
+padding:20px;
+max-width:900px;
+margin:auto;
+}
 .active{display:block;}
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.05);
-  padding:15px;
-  border-radius:12px;
-  margin:10px 0;
+background:rgba(255,255,255,0.04);
+padding:18px;
+border-radius:18px;
+margin:10px 0;
+cursor:pointer;
+transition:0.25s;
+border:1px solid rgba(255,255,255,0.05);
+}
+.card:hover{
+transform:translateY(-4px);
+background:rgba(255,255,255,0.08);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 /* GRID */
 .grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+@media(max-width:600px){
+.grid{grid-template-columns:1fr;}
 }
 
-/* MOBILE */
-@media(max-width:600px){
-  .grid{grid-template-columns:1fr;}
+/* INPUT */
+input{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+background:#020617;
+color:white;
+margin:6px 0;
 }
+
+/* BUTTON */
+.btn{
+display:block;
+margin-top:12px;
+padding:12px;
+border:none;
+border-radius:12px;
+background:#f43f5e;
+color:white;
+text-align:center;
+cursor:pointer;
+}
+.copy{background:#3b82f6;}
 
 footer{
-  text-align:center;
-  padding:20px;
-  font-size:12px;
-  opacity:0.6;
+text-align:center;
+padding:25px;
+font-size:12px;
+opacity:0.4;
 }
 </style>
 </head>
@@ -82,78 +143,60 @@ footer{
 <button onclick="show('home')">Home</button>
 <button onclick="show('cek')">Cek</button>
 <button onclick="show('artikel')">Artikel</button>
-<button onclick="show('about')">About</button>
 </nav>
 </header>
 
+<div class="hero">
+<h1>Scorpio Insight & Personality</h1>
+<p>Eksplorasi karakter, cinta, dan energi Scorpio</p>
+</div>
+
 <!-- HOME -->
 <div id="home" class="section active">
+<h2>🔥 Trending</h2>
+<div class="grid" id="trending"></div>
 
-<h2>🔥 Trending Scorpio</h2>
-
-<div class="grid">
-
-<div class="card">Ramalan Scorpio Hari Ini 🔮</div>
-<div class="card">Scorpio Oktober vs November ⚡</div>
-<div class="card">Rahasia Scorpio 🔥</div>
-<div class="card">Cinta Scorpio ❤️</div>
-
-</div>
-
-<!-- IKLAN -->
 <div class="card">
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-5573259816465364"
-data-ad-slot="1234567890"
-data-ad-format="auto"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+🔥 Tag temanmu dan bandingkan hasilnya!
 </div>
-
 </div>
 
 <!-- CEK -->
 <div id="cek" class="section">
-
 <h2>Cek Scorpio Kamu</h2>
 
-<input id="nama" placeholder="Nama"><br>
+<input id="nama" placeholder="Nama">
 <input id="tgl" type="number" placeholder="Tanggal">
-<input id="bln" type="number" placeholder="Bulan (10/11)"><br><br>
+<input id="bln" type="number" placeholder="Bulan (10/11)">
 
-<button onclick="cek()">🔮 Cek</button>
+<button class="btn" onclick="cek()">🔮 Lihat Hasil</button>
 
 <div id="hasil" class="card" style="display:none;"></div>
-
 </div>
 
 <!-- ARTIKEL -->
 <div id="artikel" class="section">
-  <h2>🆕 Artikel Terbaru</h2>
+<h2>🆕 Artikel</h2>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-<a class="card" href="post.html?id=0">Karakter Scorpio</a>
-<a class="card" href="post.html?id=1">Rahasia Scorpio</a>
-<a class="card" href="post.html?id=2">Sulit Dilupakan</a>
-<a class="card" href="post.html?id=3">Kelebihan Scorpio</a>
-</div>
-
-<h2>Artikel Scorpio</h2>
+<input id="search" placeholder="Cari artikel..." onkeyup="cari()">
 
 <div id="listArtikel"></div>
-
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="section">
+<!-- DETAIL -->
+<div id="detail" class="section">
 <div class="card">
-<h2>Tentang Website</h2>
-<p>Portal Scorpio berisi ramalan, karakter, dan insight zodiak Scorpio.</p>
+<h1 id="judul"></h1>
+<p id="isi"></p>
+
+<button class="btn" onclick="shareWA()">📲 Share</button>
+<button class="btn copy" onclick="copyLink()">🔗 Copy Link</button>
+<button class="btn" onclick="show('home')">⬅ Kembali</button>
 </div>
 </div>
 
 <footer>
-© 2026 Scorpio Portal | Hiburan & Informasi
+© 2026 Scorpio Portal
 </footer>
 
 <script>
@@ -163,48 +206,79 @@ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
 document.getElementById(id).classList.add('active');
 }
 
-function rand(arr){
-return arr[Math.floor(Math.random()*arr.length)];
+/* DATA */
+const artikelData=[
+{judul:"Karakter Scorpio",isi:"Scorpio kuat, misterius,peka,tatapan tajam, dan penuh ambisi."},
+{judul:"Rahasia Scorpio",isi:"Scorpio tertutup tapi sangat setia."},
+{judul:"Cinta Scorpio",isi:"Cinta Scorpio dalam dan totalitas."},
+{judul:"Kelebihan Scorpio",isi:"Berani, setia, dan bertekad kuat."},
+{judul:"Kelemahan Scorpio",isi:"Cemburuan,posesif, dan sulit melupakan masa lalu."},
+{judul:"Keuangan Scorpio",isi:"Pandai mengatur strategi keuangan meski terkadang boros."}
+];
+
+/* TRENDING TANPA DUPLIKAT */
+let used=[];
+let t="";
+
+while(used.length<4){
+let r=Math.floor(Math.random()*artikelData.length);
+if(!used.includes(r)){
+used.push(r);
+t+=`<div class="card" onclick="buka(${r})">${artikelData[r].judul}</div>`;
+}
+}
+document.getElementById("trending").innerHTML=t;
+
+/* LIST */
+function tampil(data){
+let h="";
+data.forEach((a,i)=>{
+h+=`<div class="card" onclick="buka(${i})"><h3>${a.judul}</h3><p>${a.isi}</p></div>`;
+});
+document.getElementById("listArtikel").innerHTML=h;
+}
+tampil(artikelData);
+
+/* SEARCH */
+function cari(){
+let k=document.getElementById("search").value.toLowerCase();
+tampil(artikelData.filter(a=>a.judul.toLowerCase().includes(k)));
 }
 
+/* DETAIL */
+let currentId=0;
+function buka(id){
+currentId=id;
+document.getElementById("judul").innerText=artikelData[id].judul;
+document.getElementById("isi").innerText=artikelData[id].isi;
+show('detail');
+}
+
+/* CEK */
 function cek(){
 let nama=document.getElementById("nama").value||"Kamu";
-let t=parseInt(document.getElementById("tgl").value);
-let b=parseInt(document.getElementById("bln").value);
-
-let tipe="";
-if(b==10 && t>=23) tipe="Oktober";
-else if(b==11 && t<=21) tipe="November";
-else{alert("Scorpio only");return;}
-
 let hoki=Math.floor(Math.random()*100);
 
 document.getElementById("hasil").style.display="block";
 document.getElementById("hasil").innerHTML=`
-<h3>${nama} - Scorpio ${tipe}</h3>
+<h3>${nama}</h3>
 <p>🔥 Hoki: ${hoki}%</p>
-<p>❤️ ${rand(["Cinta datang","Ujian cinta"])}</p>
-<p>💰 ${rand(["Rezeki datang","Hemat dulu"])}</p>
+<p>❤️ Cinta penuh misteri</p>
+<p>💰 Rezeki naik</p>
+<p>🎨 Hitam,Maroon,Merah,Unggu,Navy Blue</p>
 `;
 }
 
-/* ARTIKEL AUTO */
-const artikelData=[
-"Karakter Scorpio",
-"Rahasia Scorpio",
-"Cinta Scorpio",
-"Keuangan Scorpio",
-"Sifat Scorpio",
-"Kelebihan Scorpio",
-"Kelemahan Scorpio",
-"Scorpio Hari Ini"
-];
+/* SHARE */
+function shareWA(){
+let text=encodeURIComponent(artikelData[currentId].judul);
+window.open(`https://wa.me/?text=${text}`);
+}
 
-let html="";
-artikelData.forEach(j=>{
-html+=`<div class="card"><h3>${j}</h3><p>Scorpio dikenal sebagai pribadi kuat dan penuh misteri.</p></div>`;
-});
-document.getElementById("listArtikel").innerHTML=html;
+function copyLink(){
+navigator.clipboard.writeText(window.location.href);
+alert("Link disalin!");
+}
 
 </script>
 
