@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Artikel Scorpio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<nav>
+<a href="index.html">Home</a>
+<a href="artikel.html">Artikel</a>
+</nav>
+</header>
+
+<div class="container">
+
+<h1 id="judul"></h1>
+<p id="isi"></p>
+
+</div>
+
+<script>
+
+const data = [
+"Scorpio dikenal sebagai pribadi kuat dan penuh misteri. Mereka memiliki tekad yang tinggi dalam mencapai tujuan hidup.",
+"Scorpio memiliki intuisi tajam yang membuat mereka sering memahami situasi lebih cepat dari orang lain.",
+"Banyak orang menganggap Scorpio sulit dilupakan karena karakter mereka yang dalam dan emosional.",
+"Scorpio memiliki kelebihan seperti fokus, setia, dan tidak mudah menyerah dalam hidup.",
+"Namun Scorpio juga memiliki kelemahan seperti mudah emosional dan sulit percaya orang lain.",
+"Dalam asmara, Scorpio dikenal penuh gairah dan sangat setia pada pasangan.",
+"Dalam keuangan, Scorpio perlu belajar mengontrol pengeluaran agar lebih stabil.",
+"Dalam pertemanan, Scorpio adalah teman yang setia namun selektif.",
+"Scorpio Oktober lebih ekspresif, sedangkan November lebih dalam dan tenang.",
+"Untuk sukses, Scorpio harus mengendalikan emosi dan tetap fokus pada tujuan.",
+"Karier Scorpio cocok di bidang yang membutuhkan strategi dan fokus.",
+"Fakta unik Scorpio adalah kemampuan mereka membaca situasi dengan cepat.",
+"Scorpio dikenal sebagai zodiak paling setia dalam hubungan.",
+"Emosi Scorpio sangat dalam dan sering sulit ditebak.",
+"Scorpio memiliki potensi besar untuk masa depan cerah.",
+"Energi Scorpio hari ini penuh semangat dan motivasi.",
+"Keberuntungan Scorpio datang dari usaha dan tekad mereka.",
+"Scorpio sering mengalami cinta diam-diam yang mendalam.",
+"Aura misterius Scorpio membuat mereka menarik.",
+"Ambisi Scorpio sangat tinggi dalam mencapai tujuan hidup.",
+"Intuisi Scorpio sering menjadi keunggulan utama.",
+"Di bawah tekanan, Scorpio tetap kuat.",
+"Kesuksesan Scorpio berasal dari ketekunan.",
+"Scorpio menjalani hidup dengan penuh strategi.",
+"Perubahan sering membawa Scorpio ke arah lebih baik.",
+"Mental Scorpio sangat kuat menghadapi masalah.",
+"Strategi hidup Scorpio selalu terencana.",
+"Kepribadian Scorpio unik dan berbeda.",
+"Scorpio memiliki daya tarik alami.",
+"Scorpio termasuk zodiak paling menarik."
+];
+
+const judul = [
+"Karakter Scorpio yang kuat",
+"Rahasia Scorpio tersembunyi",
+"Kenapa Scorpio sulit dilupakan",
+"Kelebihan Scorpio dalam hidup",
+"Kelemahan Scorpio yang jarang diketahui",
+"Asmara Scorpio hari ini",
+"Scorpio dan keuangan",
+"Scorpio dalam pertemanan",
+"Scorpio Oktober vs November",
+"Tips sukses untuk Scorpio",
+"Scorpio dan karier",
+"Fakta unik Scorpio",
+"Scorpio paling setia?",
+"Scorpio dan emosi",
+"Scorpio dan masa depan",
+"Energi Scorpio hari ini",
+"Scorpio dan keberuntungan",
+"Scorpio dan cinta diam-diam",
+"Scorpio yang misterius",
+"Scorpio paling ambisius",
+"Scorpio dan intuisi",
+"Scorpio dalam tekanan",
+"Scorpio dan kesuksesan",
+"Scorpio dan kehidupan",
+"Scorpio dan perubahan",
+"Scorpio yang kuat mental",
+"Scorpio dan strategi hidup",
+"Scorpio dan kepribadian unik",
+"Scorpio dan daya tarik",
+"Scorpio paling menarik"
+];
+
+const url = new URLSearchParams(window.location.search);
+const id = url.get("id") || 0;
+
+document.getElementById("judul").innerText = judul[id];
+document.getElementById("isi").innerText = data[id];
+
+document.title = judul[id] + " - Scorpio Portal";
+
+</script>
+
+</body>
+</html>
